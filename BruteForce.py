@@ -18,12 +18,6 @@ MINLEN = 5
 string=""
 lenString=0
 
-#Retourne le hash d'une string passée en paramètre : type d'algo MD5
-def md5hash(char_sequence):
-    string = ''.join(char_sequence)
-    hash_object = hashlib.md5(string.encode())
-    return hash_object.hexdigest()
-
 #Méthode recursive
 def recursive(string, lenString):
     #On s'assure qu'on ne test pas de valeur plus grande que voulue
@@ -56,7 +50,7 @@ def recursive(string, lenString):
 
 
 #On lit le fichier shadow en lecture seule 'r'
-with open("shadow", "r") as shad:
+with open("shadow_giselle", "r") as shad:
     #Objet user => password
     objPwd = {}
     for ligne in shad:
